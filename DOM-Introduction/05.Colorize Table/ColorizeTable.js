@@ -1,9 +1,13 @@
 function colorize() {
+    //first solution with CSS selector
     // let rowElements = document.querySelectorAll('tr:nth-of-type(2n) td');
-    // rowElements.forEach(x => {
+    //let rows = Array.from(rowElements)
+    // rows.forEach(x => {
     //     x.style.backgroundColor = 'teal'
     // });
     
+
+    //second way to solve the problem:
     let rowElements = document.getElementsByTagName('tr')
 
     let rows = Array.from(rowElements)
