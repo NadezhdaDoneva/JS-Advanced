@@ -20,11 +20,11 @@ function solve() {
          for (const p of moneyArr) {
             total+=p
          }
-         total = total.toFixed(2)
+         total = Number(total).toFixed(2)
          textAreaElement.textContent+=`You bought ${namesArr.join(', ')} for ${total}.`
-         let allAddButtonELements = document.querySelectorAll('.add-product');
-         console.log(allAddButtonELements);
-         allAddButtonELements.disabled = false;
+         // let allAddButtonELements = document.querySelectorAll('.add-product');
+         // console.log(allAddButtonELements);
+         // allAddButtonELements.disabled = false;
       }
    }
 }
