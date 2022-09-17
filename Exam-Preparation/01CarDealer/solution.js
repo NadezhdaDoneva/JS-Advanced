@@ -57,7 +57,6 @@ function solve() {
     elGenerator("td", `${firstPriceInputEl}`, tr);
     elGenerator("td", `${sellingPriceInputEl}`, tr);
     const actionCell = elGenerator("td");
-    console.log(actionCell);
     tr.appendChild(actionCell);
 
     const editBtn = elGenerator("button", "Edit", actionCell);
