@@ -37,7 +37,7 @@ class LibraryCollection{
             } else{
                 const index = this.books.indexOf(foundBook);
                 this.books.splice(index, 1);
-                return `${bookName} remove from the collection.`
+                return `${bookName} remove from the collection.`;
             }
         }
     }
