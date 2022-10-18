@@ -67,9 +67,16 @@ describe('Rent car function tests', ()=>{
         it('should throw an error when the third input element is invallid', ()=>{
             assert.throw(() => rentCar.checkBudget(10, 10, 'test'), "Invalid input!");
         });
+        it('should throw an error when the third input element is invallid', ()=>{
+            assert.throw(() => rentCar.checkBudget('test','test', 'test'), "Invalid input!");
+        });
         //valid input
         it('should return the right value', ()=>{
             assert.equal(rentCar.checkBudget(10, 10, 200), `You rent a car!`
+            );
+        });
+        it('should return the right value', ()=>{
+            assert.equal(rentCar.checkBudget(10, 10, 100), `You rent a car!`
             );
         });
         it('should return the right value', ()=>{

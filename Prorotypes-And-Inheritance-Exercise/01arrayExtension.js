@@ -1,5 +1,4 @@
-function arrayExtension(){
-    let myArr = [1,2,3,4,5,6,7,8,9];
+(function arrayExtension(){
 
     Array.prototype.print = function (){
         console.log(this.join(' '));
@@ -24,5 +23,4 @@ function arrayExtension(){
     Array.prototype.average =function(){
         return this.sum()/this.length;
     }
-}
-arrayExtension() 
+})()

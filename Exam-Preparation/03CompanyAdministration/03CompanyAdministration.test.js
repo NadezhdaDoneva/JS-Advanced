@@ -48,6 +48,9 @@ describe('companyAdministration function tests', ()=>{
             assert.throw(() => companyAdministration.firedEmployee([], 'str'), 'Invalid input');
         });
         it('should throw an error if the possition is different from programmer', ()=>{
+            assert.throw(() => companyAdministration.firedEmployee('str', 'str'), 'Invalid input');
+        });
+        it('should throw an error if the possition is different from programmer', ()=>{
             assert.throw(() => companyAdministration.firedEmployee(['Test', 'Ivan', 'Pesho'], 3), 'Invalid input');
         });
         it('should throw an error if the possition is different from programmer', ()=>{
