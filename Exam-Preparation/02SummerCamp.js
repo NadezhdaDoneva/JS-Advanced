@@ -43,50 +43,49 @@ class SummerCamp{
         }
     }
 
-    timeToPlay (typeOfGame, participant1, participant2) {
-        if(typeOfGame=="WaterBalloonFights"){
-            let foundPlayer1 = this.listOfParticipants.find(el=>el.name==participant1);
-            let foundPlayer2 = this.listOfParticipants.find(el=>el.name==participant2);
-            if(foundPlayer1&&foundPlayer2){
-                if(foundPlayer1.condition===foundPlayer2.condition){
-                    let winner =''
-                    if(foundPlayer1.power>foundPlayer2.power){
-                        foundPlayer1.wins++
-                        winner = foundPlayer1.name;
-                    } else {
-                        foundPlayer2.wins++
-                        winner = foundPlayer2.name;
-                    }
-                    return `The ${winner} is winner in the game WaterBalloonFights.`
-                } else {
-                    throw new Error (`Choose players with equal condition.`);
-                }
-            } else{
-                throw new Error(`Invalid entered name/s.`);
-            }
-        } else if (typeOfGame=='Battleship') {
-            let foundPlayer = this.listOfParticipants.find(el=>el.name==participant1);
-            if(foundPlayer){
-                foundPlayer.power+=20;
-                return `The ${foundPlayer.name} successfully completed the game Battleship.`
-            } else {
-                throw new Error (`Invalid entered name/s.`);
-            }
+
+    timeToPlay(typeOfGame, participant1, participant2) {
+        let player1 = this.listOfParticipants.find(participant => participant.name === participant1);
+        let player2 = this.listOfParticipants.find(participant => participant.name === participant2);
+        if (!player1) {
+            throw new Error(`Invalid entered name/s.`);
         } else {
-            return `There is no winner.`;
+            if (typeOfGame === "WaterBalloonFights") {
+                if (!player2) {
+                    throw new Error(`Invalid entered name/s.`);
+                } else {
+                    if (player1.condition !== player2.condition) {
+                        throw new Error(`Choose players with equal condition.`);
+                    } else {
+                        let winner = '';
+                        if (player1.power > player2.power) {
+                            player1.wins += 1;
+                            winner = participant1;
+                            return `The ${winner} is winner in the game ${typeOfGame}.`;
+                        } else if(player1.power < player2.power) {
+                            player2.wins += 1;
+                            winner = participant2;
+                            return `The ${winner} is winner in the game ${typeOfGame}.`;
+                        } else {
+                            return `There is no winner.`;
+                        }
+                    }
+                }
+            } else if (typeOfGame === "Battleship") {
+                player1.power += 20;
+                return `The ${player1.name} successfully completed the game ${typeOfGame}.`;
+            }
         }
     }
 
     toString (){
-        let res = [`${this.organizer} will take ${this.listOfParticipants.length} participants on camping to ${this.location}`];
-        let sorted = this.listOfParticipants.sort((a,b)=>{
-            a.wins-b.wins
-        });
-        sorted = sorted.reverse()
-        for (const el of sorted) {
-            res.push(`${el.name} - ${el.condition} - ${el.power} - ${el.wins}`)
-        };
-        return res.join('\n');
+        let result = [];
+        result.push(`${this.organizer} will take ${this.listOfParticipants.length} participants on camping to ${this.location}`);
+        let sorted = this.listOfParticipants.sort((a, b) => b.wins - a.wins);
+        for(let participant of sorted){
+            result.push(`${participant.name} - ${participant.condition} - ${participant.power} - ${participant.wins}`);
+        }
+        return result.join('\n');
     }
 }
 const summerCamp = new SummerCamp("Jane Austen", "Pancharevo Sofia 1137, Bulgaria");
