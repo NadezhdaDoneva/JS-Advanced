@@ -3,6 +3,12 @@ body{
     margin: auto;
 }
 
+#market-heading{
+  font-weight: 500;
+  color: #494;
+  font-size: 40px;
+}
+
 .product-image {
     float: left;
     width: 20%;
@@ -117,6 +123,7 @@ body{
     float: right;
     border: 0;
     margin-top: 20px;
+    margin-left: 20px;
     padding: 6px 25px;
     background-color: #6b6;
     color: #fff;
@@ -125,6 +132,21 @@ body{
   }
   
   .checkout:hover {
+    background-color: #494;
+  }
+
+  .clear {
+    float: right;
+    border: 0;
+    margin-top: 20px;
+    padding: 6px 25px;
+    background-color: #6b6;
+    color: #fff;
+    font-size: 25px;
+    border-radius: 3px;
+  }
+  
+  .clear:hover {
     background-color: #494;
   }
   
