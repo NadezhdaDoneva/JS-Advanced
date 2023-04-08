@@ -31,7 +31,7 @@ function solve() {
       textAreaElement.textContent = "";
       moneyArr = [];
       namesArr = [];
-      total = [];
+      total = 0;
 
    }
 
