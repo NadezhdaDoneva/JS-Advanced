@@ -206,14 +206,17 @@ header a:hover {
   
   .column {
     float: left;
-    width: 50%;
+    width: 100%;
     margin-bottom: 16px;
     padding: 5px;
+   
   }
   
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 8px;
+    float: left;
+    width: 50%;
   } 
   
   .about-section {
@@ -237,7 +240,7 @@ header a:hover {
   
   
   .button:hover {
-    background-color: green;
+    background-color:  #494;
   }
 
   
