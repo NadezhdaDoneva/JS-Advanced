@@ -196,6 +196,50 @@ header a:hover {
     width: 12%;
     text-align: right;
   }
+
+
+  /* Information page */
+  .img {
+    width:  540px;
+    height: 332px;
+  }
+  
+  .column {
+    float: left;
+    width: 50%;
+    margin-bottom: 16px;
+    padding: 5px;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
+  } 
+  
+  .about-section {
+    padding: 3px;
+    text-align: center;
+    background-color: #494;
+    color: white;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  
+  
+  
+  .button:hover {
+    background-color: green;
+  }
+
   
   /* This is used as the traditional .clearfix class */
   .shopping-cart:before, .column-labels:before, .product:before, .shopping-cart:after, .column-labels:after, .product:after {

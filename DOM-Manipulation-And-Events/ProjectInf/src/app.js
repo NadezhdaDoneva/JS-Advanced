@@ -2,6 +2,7 @@ import { page, render } from "./lib.js";
 import { getUserData } from "./util.js";
 import { showCatalog } from "./views/catalog.js";
 import { showHome } from "./views/home.js";
+import { showInformation } from "./views/information.js";
 import { showLogin } from "./views/login.js";
 import { updateNav } from "./views/nav.js";
 import { showRegister } from "./views/register.js";
@@ -11,7 +12,7 @@ const main = document.getElementById('content');
 page(decorateContext);
 page('/', showHome);
 page('/catalog', showCatalog);
-page('/information', () => console.log('info'));
+page('/information', showInformation);
 page('/login', showLogin);
 page('/register', showRegister);
 
