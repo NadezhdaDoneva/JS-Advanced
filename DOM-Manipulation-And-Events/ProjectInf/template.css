@@ -199,6 +199,13 @@ header a:hover {
 
 
   /* Information page */
+  html {
+    box-sizing: border-box;
+  }
+  
+  *,*:before, *:after {
+    box-sizing: inherit;
+  }
   .img {
     width:  540px;
     height: 332px;
@@ -206,17 +213,14 @@ header a:hover {
   
   .column {
     float: left;
-    width: 100%;
+    width: 50%;
     margin-bottom: 16px;
     padding: 5px;
-   
   }
   
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 8px;
-    float: left;
-    width: 50%;
   } 
   
   .about-section {
@@ -235,14 +239,28 @@ header a:hover {
     clear: both;
     display: table;
   }
+
+
+  .title {
+    color: green;
+  }
   
-  
-  
+  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
   
   .button:hover {
-    background-color:  #494;
+    background-color: green;
   }
-
+  
   
   /* This is used as the traditional .clearfix class */
   .shopping-cart:before, .column-labels:before, .product:before, .shopping-cart:after, .column-labels:after, .product:after {
